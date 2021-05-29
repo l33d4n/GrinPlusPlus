@@ -2349,42 +2349,18 @@ input, select, textarea {
 				position: relative;
 			}
 
-				.image.phone .inner:before, .image.phone .inner:after {
-					content: '';
-					position: absolute;
-					left: 50%;
-				}
-
-				.image.phone .inner:before {
-					top: -1.375em;
-					margin-left: -1em;
-					width: 2em;
-					height: 0.25em;
-					border-radius: 0.5em;
-					background: rgba(255, 255, 255, 0.25);
-				}
-
-				.image.phone .inner:after {
-					bottom: -2.75em;
-					margin-left: -1em;
-					width: 2em;
-					height: 2em;
-					border-radius: 100%;
-					border: solid 2px rgba(255, 255, 255, 0.25);
-				}
-
 			.image.phone:before, .image.phone:after {
 				content: '';
 			}
 
 			.image.phone:before {
-				height: 2.5em;
+				height: 2em;
 				border-radius: 1em 1em 0 0;
 				border-bottom: 0;
 			}
 
 			.image.phone:after {
-				height: 3.5em;
+				height: 2em;
 				border-radius: 0 0 1em 1em;
 				border-top: 0;
 			}
@@ -2394,14 +2370,6 @@ input, select, textarea {
 		}
 
 			.image.phone .inner, .image.phone:before, .image.phone:after {
-				border-color: #e6e6e6;
-			}
-
-			.image.phone .inner:before {
-				background: #e6e6e6;
-			}
-
-			.image.phone .inner:after {
 				border-color: #e6e6e6;
 			}
 
@@ -3065,14 +3033,6 @@ input, select, textarea {
 						border-color: rgba(255, 255, 255, 0.25);
 					}
 
-					.wrapper.style1 .image.phone .inner:before {
-						background: rgba(255, 255, 255, 0.25);
-					}
-
-					.wrapper.style1 .image.phone .inner:after {
-						border-color: rgba(255, 255, 255, 0.25);
-					}
-
 			.wrapper.style1 ul.alt > li {
 				border-top-color: rgba(255, 255, 255, 0.25);
 			}
@@ -3273,14 +3233,6 @@ input, select, textarea {
 				}
 
 					.wrapper.style2 .image.phone .inner, .wrapper.style2 .image.phone:before, .wrapper.style2 .image.phone:after {
-						border-color: #e6e6e6;
-					}
-
-					.wrapper.style2 .image.phone .inner:before {
-						background: #e6e6e6;
-					}
-
-					.wrapper.style2 .image.phone .inner:after {
 						border-color: #e6e6e6;
 					}
 
@@ -3487,14 +3439,6 @@ input, select, textarea {
 				}
 
 					.wrapper.style3 .image.phone .inner, .wrapper.style3 .image.phone:before, .wrapper.style3 .image.phone:after {
-						border-color: #d6d6d6;
-					}
-
-					.wrapper.style3 .image.phone .inner:before {
-						background: #d6d6d6;
-					}
-
-					.wrapper.style3 .image.phone .inner:after {
 						border-color: #d6d6d6;
 					}
 
@@ -3757,14 +3701,6 @@ input, select, textarea {
 			}
 
 				#header .image.phone .inner, #header .image.phone:before, #header .image.phone:after {
-					border-color: rgba(255, 255, 255, 0.25);
-				}
-
-				#header .image.phone .inner:before {
-					background: rgba(255, 255, 255, 0.25);
-				}
-
-				#header .image.phone .inner:after {
 					border-color: rgba(255, 255, 255, 0.25);
 				}
 
