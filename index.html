@@ -20,7 +20,7 @@
 					<h1>Confidential Grin ツ Wallet</h1>
 					<p>Grin++ was designed and coded to be secure, fast, and reliable. Your keys, your coins, all transactions are done via TOR.</p>
 					<ul class="actions">
-						<li><a href="#" class="button primary icon fa-download">Download <small id="version">v1.2.5</small></a></li>
+						<li><a id="download-link" href="#" class="button primary icon fa-download">Download <small id="version"></small></a></li>
 						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
 					</ul>
 				</div>
@@ -102,10 +102,10 @@
 					lectus ultricies eu. In convallis amet leo sapien iaculis efficitur.</p>
 				</header>
 				<ul class="actions special">
-					<li><a href="#" class="button primary icon brands fa-windows">Windows</a></li>
-					<li><a href="#" class="button">Linux</a></li>
-					<li><a href="#" class="button">MacOS</a></li>
-					<li><a href="#" class="button">Android</a></li>
+					<li><a id="windows-download" href="#" class="button primary icon brands fa-windows">Windows</a></li>
+					<li><a id="linux-download" href="#" class="button">Linux</a></li>
+					<li><a id="macos-download" href="#" class="button">MacOS</a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.grinplusplus.mobile" class="button">Android</a></li>
 				</ul>
 			</section>
 
@@ -159,6 +159,55 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				$(document).ready(function () {
+				  let winVersion = navigator.appVersion.indexOf("Win") !== -1;
+				  let macVersion = navigator.appVersion.indexOf("Mac") !== -1;
+				  let windowsLink = "";
+				  let macOSLink = "";
+				  let linuxLink = "";
+		  
+				  fetch(
+					"https://api.github.com/repos/GrinPlusPlus/GrinPlusPlus/releases/latest"
+				  )
+					.then(function (response) {
+					  return response.json();
+					})
+					.then(function (json) {
+					  let version = json.tag_name.substring(1);
+					  let downloadURL = "";
+					  const assets = json.assets;
+					  for (var i = 0; i < assets.length; i++) {
+						const asset = assets[i];
+						if (asset.browser_download_url != null) {
+						  if (asset.browser_download_url.endsWith(".dmg"))
+							macOSLink = asset.browser_download_url;
+						  if (asset.browser_download_url.endsWith(".exe"))
+							windowsLink = asset.browser_download_url;
+						  if (asset.browser_download_url.endsWith(".AppImage"))
+							linuxLink = asset.browser_download_url;
+						  if (
+							(macVersion && asset.browser_download_url.endsWith(".dmg")) ||
+							(winVersion && asset.browser_download_url.endsWith(".exe")) ||
+							(!macVersion &&
+							  !winVersion &&
+							  asset.browser_download_url.endsWith(".AppImage"))
+						  ) {
+							downloadURL = asset.browser_download_url;
+						  }
+						}
+					  }
+					  $("#version").html("v" + version);
+					  $("#download-link").attr("href", downloadURL);
+					  $("#windows-download").attr("href", windowsLink);
+					  $("#linux-download").attr("href", linuxLink);
+					  $("#macos-download").attr("href", macOSLink);
+					})
+					.catch(function (error) {
+					  console.log(error);
+					});
+				});
+			  </script>
 
 	</body>
 </html>
