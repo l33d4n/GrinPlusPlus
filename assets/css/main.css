@@ -2648,6 +2648,7 @@ input, select, textarea {
 
 	section.special, article.special {
 		text-align: center;
+		padding-bottom: 0;
 	}
 
 	header p {
