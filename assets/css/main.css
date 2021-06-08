@@ -4017,6 +4017,18 @@ input, select, textarea {
 
 		}
 
+/* Download */
+
+#download .icon.brands:before {
+	font-size: 4em;
+	margin-bottom: 0.5em;
+}
+
+#download p {
+	margin-top: 1em;
+	font-size: 80%;
+}
+
 /* Footer */
 
 	#footer {
